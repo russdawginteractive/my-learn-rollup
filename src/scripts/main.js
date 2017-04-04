@@ -1,3 +1,8 @@
+// Import styles (automatically injected into <head>).
+import '../styles/main.css';
+
+// Checking rollup watcher.
+
 // Import a couple modules for testing.
 import { sayHelloTo } from './modules/mod1';
 import addArray from './modules/mod2';
@@ -12,6 +17,10 @@ if (ENV !== 'production') {
   // Enable the logger.
   debug.enable('*');
   log('Logging is enabled!');
+
+  // Enable LiveReload
+  document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
+    ':35729/livereload.js?snipver=1"></' + 'script>');
 } else {
   debug.disable();
 }
